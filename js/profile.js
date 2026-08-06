@@ -6,7 +6,7 @@ const profile = {
 
     description:"Consultoria, Desarrollo Soluciones Web, Apps e Inteligencia Artificial.",
 
-    photo:"img/profile.jpg",
+    photo:"img/foto.jpg",
 
     whatsapp:"5215512345678",
 
