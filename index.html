@@ -1,72 +1,436 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mi Tarjeta Digital</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Solano | Tarjeta Digital & Portafolio</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <!-- Header Navbar -->
+    <header>
+        <div class="header-container">
+            <div class="brand-logo">
+                <div class="logo-box">
+                    <div class="logo-inner">IA</div>
+                </div>
+                <span class="brand-name">IAA <span>.ANALYTICS</span></span>
+            </div>
 
-<div class="card">
+            <!-- Navegación de Escritorio -->
+            <nav class="nav-desktop">
+                <button onclick="switchTab('card')" id="nav-card" class="active">Inicio</button>
+                <button onclick="switchTab('portfolio')" id="nav-portfolio">Portafolio</button>
+                <button onclick="switchTab('about')" id="nav-about">Trayectoria</button>
+                <button onclick="switchTab('contact')" id="nav-contact">Contacto</button>
+            </nav>
 
-    <img id="photo" class="photo">
+            <!-- Botón Compartir QR -->
+            <button onclick="toggleQRModal()" class="btn-qr">
+                <i data-lucide="qr-code" style="width: 16px; height: 16px; color: var(--cyan-glow);"></i>
+                <span style="display: none;">Compartir QR</span>
+            </button>
+        </div>
+    </header>
 
-    <h1 id="name"></h1>
+    <!-- Contenido Principal -->
+    <main>
 
-    <h2 id="title"></h2>
+        <!-- ================= VISTA 1: TARJETA DIGITAL (INICIO) ================= -->
+        <section id="tab-card" class="tab-content active">
+            
+            <!-- Perfil Principal -->
+            <div class="glow-card">
+                <div class="profile-header">
+                    <!-- Avatar con estatus -->
+                    <div class="avatar-container">
+                        <div class="avatar-img-box">
+                            <img src="img/foto.jpg" alt="Fernando Solano">
+                        </div>
+                        <span class="online-status" title="Disponible para proyectos"></span>
+                    </div>
 
-    <p id="description"></p>
+                    <!-- Información de Perfil -->
+                    <div class="profile-info">
+                        <div class="badge-role">
+                            <i data-lucide="cpu" style="width: 14px; height: 14px;"></i> Industrial Solutions Specialist
+                        </div>
+                        <h1 class="profile-name">Fernando Solano</h1>
+                        <p class="profile-bio">
+                            Especialista en integración de sistemas de analítica industrial, automatización de datos IoT y arquitectura de software para la industria 4.0.
+                        </p>
+                        
+                        <div class="meta-badges">
+                            <span class="meta-badge-item">📍 León, Gto. México</span>
+                            <span class="meta-badge-item">💼 iaa.analytics Inc.</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="buttons">
+                <!-- Botones de Acción Directa -->
+                <div class="quick-actions-grid">
+                    <a href="tel:+524778487537" class="action-btn">
+                        <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+                        <span>Llamar</span>
+                    </a>
+                    <a href="mailto:desarrollocpaq2@gmail.com" class="action-btn">
+                        <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                        <span>Enviar Correo</span>
+                    </a>
+                    <a href="https://wa.me/524778487537" target="_blank" class="action-btn whatsapp-btn">
+                        <i data-lucide="message-square" style="width: 20px; height: 20px;"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <button onclick="downloadVCard()" class="action-btn primary-vcard">
+                        <i data-lucide="user-plus" style="width: 20px; height: 20px;"></i>
+                        <span style="font-weight: 600;">Guardar Contacto</span>
+                    </button>
+                </div>
+            </div>
 
-        <a id="btnContacto" class="btn">
-            Guardar contacto
-        </a>
+            <!-- Redes Sociales y Enlaces Oficiales -->
+            <div class="glow-card">
+                <h3 class="section-title">Conexiones Profesionales</h3>
+                <div class="social-list">
+                    <a href="https://linkedin.com" target="_blank" class="social-item">
+                        <div class="social-info">
+                            <div class="icon-box linkedin">
+                                <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
+                            </div>
+                            <div>
+                                <p class="title">LinkedIn</p>
+                                <p class="handle">/in/fernando-solano-029738354</p>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
+                    </a>
 
-        <a id="btnWhatsapp" class="btn">
-            WhatsApp
-        </a>
+                    <a href="https://github.com" target="_blank" class="social-item">
+                        <div class="social-info">
+                            <div class="icon-box github">
+                                <i data-lucide="github" style="width: 16px; height: 16px;"></i>
+                            </div>
+                            <div>
+                                <p class="title">GitHub</p>
+                                <p class="handle">@FernandoSolanoRJ45</p>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
+                    </a>
 
-        <a id="btnCorreo" class="btn">
-            Correo
-        </a>
+                    <a href="#" class="social-item">
+                        <div class="social-info">
+                            <div class="icon-box web">
+                                <i data-lucide="globe" style="width: 16px; height: 16px;"></i>
+                            </div>
+                            <div>
+                                <p class="title">Sitio Web Corporativo</p>
+                                <p class="handle">www.iaa-analytics.mx</p>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
+                    </a>
+                </div>
+            </div>
 
-        <a id="btnGithub" class="btn">
-            GitHub
-        </a>
+            <!-- Proyectos Destacados Rápida -->
+            <div class="glow-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h3 class="section-title" style="margin-bottom: 0;">Proyectos Recientes</h3>
+                    <button onclick="switchTab('portfolio')" style="background: none; border: none; color: var(--cyan-glow); font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                        Ver todos <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                </div>
 
-        <a id="btnLinkedin" class="btn">
-            LinkedIn
-        </a>
+                <div class="grid-2">
+                    <div class="mini-project-card" onclick="openProjectModal(1)">
+                        <span class="cat">IoT Industrial</span>
+                        <h4>Plataforma SCADA Cloud</h4>
+                        <p>Monitorización en tiempo real de plantas de manufactura automotriz.</p>
+                    </div>
+                    <div class="mini-project-card" onclick="openProjectModal(2)">
+                        <span class="cat">Data Analytics</span>
+                        <h4>Predictive Maintenance AI</h4>
+                        <p>Algoritmos de aprendizaje automático para predecir fallas en turbinas.</p>
+                    </div>
+                </div>
+            </div>
 
+        </section>
+
+        <!-- ================= VISTA 2: PORTAFOLIO DE PROYECTOS ================= -->
+        <section id="tab-portfolio" class="tab-content">
+            <div class="portfolio-header">
+                <div>
+                    <h2 style="font-size: 20px; font-weight: 700; color: var(--text-white);">Portafolio de Proyectos</h2>
+                    <p style="font-size: 12px; color: var(--text-muted);">Soluciones tecnológicas e industriales desarrolladas</p>
+                </div>
+
+                <!-- Filtros -->
+                <div class="portfolio-filters">
+                    <button onclick="filterPortfolio('all')" class="filter-btn active">Todos</button>
+                    <button onclick="filterPortfolio('iot')" class="filter-btn">IoT</button>
+                    <button onclick="filterPortfolio('analytics')" class="filter-btn">Analytics</button>
+                    <button onclick="filterPortfolio('web')" class="filter-btn">Software</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Proyectos -->
+            <div class="portfolio-grid" id="portfolio-grid">
+                
+                <!-- Proyecto 1 -->
+                <div class="project-card portfolio-item iot">
+                    <div>
+                        <div class="project-img-box">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" alt="SCADA Cloud">
+                            <div class="gradient-overlay"></div>
+                            <span class="cat-badge">IoT / Telemetría</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Plataforma SCADA Telemetry Cloud</h3>
+                            <p>Sistema web distribuido para monitorear +500 sensores industriales PLC en plantas siderúrgicas.</p>
+                            <div class="tag-list">
+                                <span class="tag-item">Python</span>
+                                <span class="tag-item">MQTT</span>
+                                <span class="tag-item">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <button onclick="openProjectModal(1)" class="btn-details">
+                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card portfolio-item analytics">
+                    <div>
+                        <div class="project-img-box">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Analytics AI">
+                            <div class="gradient-overlay"></div>
+                            <span class="cat-badge">Data Analytics</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Predictive Maintenance AI</h3>
+                            <p>Modelo de Machine Learning para prevención de fallas en maquinaria pesada con 94% de precisión.</p>
+                            <div class="tag-list">
+                                <span class="tag-item">TensorFlow</span>
+                                <span class="tag-item">FastAPI</span>
+                                <span class="tag-item">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <button onclick="openProjectModal(2)" class="btn-details">
+                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card portfolio-item web">
+                    <div>
+                        <div class="project-img-box">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Industrial ERP">
+                            <div class="gradient-overlay"></div>
+                            <span class="cat-badge">Software Empresarial</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Dashboard de Métricas OEE</h3>
+                            <p>Panel de control de Eficiencia General de Equipos (OEE) para supervisores de producción.</p>
+                            <div class="tag-list">
+                                <span class="tag-item">Vue.js</span>
+                                <span class="tag-item">Node.js</span>
+                                <span class="tag-item">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <button onclick="openProjectModal(3)" class="btn-details">
+                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= VISTA 3: TRAYECTORIA Y HABILIDADES ================= -->
+        <section id="tab-about" class="tab-content">
+            
+            <!-- Resumen -->
+            <div class="glow-card">
+                <h2 style="font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 12px;">Perfil & Filosofía Work</h2>
+                <p style="font-size: 14px; color: var(--text-main); line-height: 1.6;">
+                    Ingeniero con más de 8 años de experiencia conectando el mundo físico industrial con arquitecturas digitales modernas. Apasionado por la optimización de procesos mediante análisis predictivo, desarrollo de plataformas escalables y digitalización integral de líneas de ensamble.
+                </p>
+            </div>
+
+            <!-- Experiencia Laboral Timeline -->
+            <div class="glow-card">
+                <h3 class="section-title">Experiencia Profesional</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-meta">
+                            <span>Core Analytics Inc.</span>
+                            <span>2021 - Presente</span>
+                        </div>
+                        <h4>Lead Solutions Architect</h4>
+                        <p>Liderazgo de equipo multidisciplinario enfocado en desplegar soluciones de visión artificial y analítica IoT para la industria manufacturera.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot muted"></span>
+                        <div class="timeline-meta muted">
+                            <span>Industrial Automation Group</span>
+                            <span>2018 - 2021</span>
+                        </div>
+                        <h4>Ingeniero de Automatización & IoT</h4>
+                        <p>Diseño de redes de comunicación industrial (PROFINET, Modbus TCP) e integración con plataformas en la nube AWS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competencias Técnicas -->
+            <div class="glow-card">
+                <h3 class="section-title">Competencias Técnicas</h3>
+                
+                <div class="skill-list">
+                    <div>
+                        <div class="skill-header">
+                            <span>IoT & Industrial Protocols (MQTT, OPC UA, Modbus)</span>
+                            <span style="color: var(--cyan-glow);">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="skill-header">
+                            <span>Data Analytics & Machine Learning (Python, SQL)</span>
+                            <span style="color: var(--cyan-glow);">88%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="skill-header">
+                            <span>Desarrollo Web & Dashboarding (React, Node.js)</span>
+                            <span style="color: var(--cyan-glow);">82%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= VISTA 4: CONTACTO ================= -->
+        <section id="tab-contact" class="tab-content">
+            <div class="glow-card">
+                <h2 style="font-size: 20px; font-weight: 700; color: var(--text-white); margin-bottom: 8px;">Inicia una Conversación</h2>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 24px;">¿Tienes un proyecto en mente o consulta técnica? Envíame un mensaje directo.</p>
+
+                <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label>Tu Nombre</label>
+                            <input type="text" required placeholder="Ej. Ana Gómez">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" required placeholder="ana@empresa.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Asunto</label>
+                        <input type="text" required placeholder="Consulta sobre proyecto IoT">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" required placeholder="Describe brevemente tus requerimientos..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i data-lucide="send" style="width: 16px; height: 16px;"></i> Enviar Mensaje
+                    </button>
+                </form>
+
+                <div id="form-success" class="form-success-msg" style="display: none;">
+                    ¡Gracias por tu mensaje! Me pondré en contacto contigo a la brevedad.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation Flotante Inferior Móvil -->
+    <div class="mob-nav">
+        <button onclick="switchTab('card')" id="mob-nav-card" class="active">
+            <i data-lucide="user" style="width: 20px; height: 20px;"></i>
+        </button>
+        <button onclick="switchTab('portfolio')" id="mob-nav-portfolio">
+            <i data-lucide="briefcase" style="width: 20px; height: 20px;"></i>
+        </button>
+        <button onclick="switchTab('about')" id="mob-nav-about">
+            <i data-lucide="file-text" style="width: 20px; height: 20px;"></i>
+        </button>
+        <button onclick="switchTab('contact')" id="mob-nav-contact">
+            <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+        </button>
     </div>
 
-    <hr>
+    <!-- Modal QR Code -->
+    <div id="qr-modal" class="modal-overlay hidden">
+        <div class="modal-card" style="text-align: center;">
+            <button onclick="toggleQRModal()" class="btn-close-modal">
+                <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+            </button>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 4px;">Escanea mi Tarjeta</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">Comparte fácilmente este perfil con otros dispositivos</p>
+            
+            <div style="background-color: #fff; padding: 16px; border-radius: 12px; display: inline-block; margin-bottom: 16px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://iaa-analytics.mx/fernando" alt="QR Code" style="width: 176px; height: 176px; display: block;">
+            </div>
 
-    <h3>Descargas</h3>
-
-    <div class="downloads">
-
-        <a id="btnCV" class="btn secondary">
-            📄 CV
-        </a>
-
-        <a id="btnDemo" class="btn secondary">
-            📁 Demo
-        </a>
-
+            <p style="font-size: 11px; font-family: var(--font-mono); color: var(--text-dim);">https://iaa-analytics.mx/fernando</p>
+        </div>
     </div>
 
-</div>
+    <!-- Modal Detalles de Proyecto -->
+    <div id="project-modal" class="modal-overlay hidden">
+        <div class="modal-card" style="max-width: 512px; max-height: 90vh; overflow-y: auto;">
+            <button onclick="closeProjectModal()" class="btn-close-modal">
+                <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+            </button>
+            
+            <span id="modal-project-cat" class="cat-badge" style="position: static; display: inline-block; margin-bottom: 8px;">Categoría</span>
+            <h3 id="modal-project-title" style="font-size: 20px; font-weight: 700; color: var(--text-white); margin-bottom: 12px;">Título del Proyecto</h3>
+            
+            <img id="modal-project-img" src="" alt="Proyecto" style="width: 100%; height: 192px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-slate); margin-bottom: 12px;">
+            
+            <p id="modal-project-desc" style="font-size: 12px; color: var(--text-main); line-height: 1.6; margin-bottom: 16px;">Descripción completa...</p>
+            
+            <div style="border-top: 1px solid var(--border-slate); padding-top: 12px; margin-bottom: 16px;">
+                <h4 style="font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 8px;">Tecnologías Utilizadas:</h4>
+                <div id="modal-project-tags" class="tag-list"></div>
+            </div>
 
-<script src="js/profile.js"></script>
-<script src="js/app.js"></script>
-
+            <button onclick="closeProjectModal()" class="btn-details">Cerrar</button>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
