@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Solano | Tarjeta Digital & Portafolio</title>
+    <title>Carlos Rodríguez | Tarjeta Digital & Portafolio</title>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +17,8 @@
                 <div class="logo-box">
                     <div class="logo-inner">IA</div>
                 </div>
-                <span class="brand-name">IAA <span>.ANALYTICS</span></span>
+                <!--span class="brand-name">IAA <span>.ANALYTICS</span></span-->
+                <span id="brand-name" class="brand-name"></span>
             </div>
 
             <!-- Navegación de Escritorio -->
@@ -48,7 +49,7 @@
                     <!-- Avatar con estatus -->
                     <div class="avatar-container">
                         <div class="avatar-img-box">
-                            <img src="img/foto.jpg" alt="Fernando Solano">
+                            <img id="profile-avatar">
                         </div>
                         <span class="online-status" title="Disponible para proyectos"></span>
                     </div>
@@ -56,33 +57,36 @@
                     <!-- Información de Perfil -->
                     <div class="profile-info">
                         <div class="badge-role">
-                            <i data-lucide="cpu" style="width: 14px; height: 14px;"></i> Industrial Solutions Specialist
+                            <i data-lucide="cpu" style="width: 14px; height: 14px;"></i> 
+                            <p id="badge-role"></p>
                         </div>
-                        <h1 class="profile-name">Fernando Solano</h1>
-                        <p class="profile-bio">
-                            Especialista en integración de sistemas de analítica industrial, automatización de datos IoT y arquitectura de software para la industria 4.0.
-                        </p>
+                        <h1 id="profile-name" class="profile-name"></h1>
+                        <p id="profile-bio" class="profile-bio"></p>
                         
                         <div class="meta-badges">
-                            <span class="meta-badge-item">📍 León, Gto. México</span>
-                            <span class="meta-badge-item">💼 iaa.analytics Inc.</span>
+                            <span id="meta-badge-city" class="meta-badge-item"></span>
+                            <span id="meta-badge-company" class="meta-badge-item"></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Botones de Acción Directa -->
                 <div class="quick-actions-grid">
-                    <a href="tel:+524778487537" class="action-btn">
+                    <a id="action-btn-tel" class="action-btn">
                         <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
                         <span>Llamar</span>
                     </a>
-                    <a href="mailto:desarrollocpaq2@gmail.com" class="action-btn">
+                    <a id="action-btn-mailto" class="action-btn">
                         <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
                         <span>Enviar Correo</span>
                     </a>
-                    <a href="https://wa.me/524778487537" target="_blank" class="action-btn whatsapp-btn">
+                    <a id="action-btn-ws" target="_blank" class="action-btn whatsapp-btn">
                         <i data-lucide="message-square" style="width: 20px; height: 20px;"></i>
                         <span>WhatsApp</span>
+                    </a>
+                    <a id="action-btn-cv" class="action-btn">
+                        <i data-lucide="download" style="width: 20px; height: 20px;"></i>
+                        <span>Descargar CV</span>
                     </a>
                     <button onclick="downloadVCard()" class="action-btn primary-vcard">
                         <i data-lucide="user-plus" style="width: 20px; height: 20px;"></i>
@@ -95,27 +99,27 @@
             <div class="glow-card">
                 <h3 class="section-title">Conexiones Profesionales</h3>
                 <div class="social-list">
-                    <a href="https://linkedin.com" target="_blank" class="social-item">
+                    <a id="social-linkedin" target="_blank" class="social-item">
                         <div class="social-info">
                             <div class="icon-box linkedin">
                                 <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
                             </div>
                             <div>
                                 <p class="title">LinkedIn</p>
-                                <p class="handle">/in/fernando-solano-029738354</p>
+                                <p id="in-handle" class="handle"></p>
                             </div>
                         </div>
                         <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
                     </a>
 
-                    <a href="https://github.com" target="_blank" class="social-item">
+                    <a id="social-github" target="_blank" class="social-item">
                         <div class="social-info">
                             <div class="icon-box github">
                                 <i data-lucide="github" style="width: 16px; height: 16px;"></i>
                             </div>
                             <div>
                                 <p class="title">GitHub</p>
-                                <p class="handle">@FernandoSolanoRJ45</p>
+                                <p id="gh-handle" class="handle"></p>
                             </div>
                         </div>
                         <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
@@ -128,7 +132,7 @@
                             </div>
                             <div>
                                 <p class="title">Sitio Web Corporativo</p>
-                                <p class="handle">www.iaa-analytics.mx</p>
+                                <p id="web-handle" class="handle"></p>
                             </div>
                         </div>
                         <i data-lucide="external-link" style="width: 16px; height: 16px; color: var(--text-dim);"></i>
@@ -147,14 +151,14 @@
 
                 <div class="grid-2">
                     <div class="mini-project-card" onclick="openProjectModal(1)">
-                        <span class="cat">IoT Industrial</span>
-                        <h4>Plataforma SCADA Cloud</h4>
-                        <p>Monitorización en tiempo real de plantas de manufactura automotriz.</p>
+                        <span id="mini-proj-c1-cat" class="cat"></span>
+                        <h4 id="mini-proj-c1-titulo"></h4>
+                        <p id="mini-proj-c1-descripcion"></p>
                     </div>
                     <div class="mini-project-card" onclick="openProjectModal(2)">
-                        <span class="cat">Data Analytics</span>
-                        <h4>Predictive Maintenance AI</h4>
-                        <p>Algoritmos de aprendizaje automático para predecir fallas en turbinas.</p>
+                        <span id="mini-proj-c2-cat" class="cat"></span>
+                        <h4 id="mini-proj-c2-titulo"></h4>
+                        <p id="mini-proj-c2-descripcion"></p>
                     </div>
                 </div>
             </div>
@@ -172,7 +176,7 @@
                 <!-- Filtros -->
                 <div class="portfolio-filters">
                     <button onclick="filterPortfolio('all')" class="filter-btn active">Todos</button>
-                    <button onclick="filterPortfolio('iot')" class="filter-btn">IoT</button>
+                    <button onclick="filterPortfolio('macros')" class="filter-btn">Macros</button>
                     <button onclick="filterPortfolio('analytics')" class="filter-btn">Analytics</button>
                     <button onclick="filterPortfolio('web')" class="filter-btn">Software</button>
                 </div>
@@ -182,21 +186,17 @@
             <div class="portfolio-grid" id="portfolio-grid">
                 
                 <!-- Proyecto 1 -->
-                <div class="project-card portfolio-item iot">
+                <div class="project-card portfolio-item macros">
                     <div>
                         <div class="project-img-box">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" alt="SCADA Cloud">
+                            <img id="proyecto-1-img" alt="Proyecto Uno">
                             <div class="gradient-overlay"></div>
-                            <span class="cat-badge">IoT / Telemetría</span>
+                            <span id="proyecto-1-cat-badge" class="cat-badge"></span>
                         </div>
                         <div class="project-body">
-                            <h3>Plataforma SCADA Telemetry Cloud</h3>
-                            <p>Sistema web distribuido para monitorear +500 sensores industriales PLC en plantas siderúrgicas.</p>
-                            <div class="tag-list">
-                                <span class="tag-item">Python</span>
-                                <span class="tag-item">MQTT</span>
-                                <span class="tag-item">React</span>
-                            </div>
+                            <h3 id="proyecto-1-titulo"></h3>
+                            <p id="proyecto-1-descripcion"></p>
+                            <div id="proyecto-1-taglist" class="tag-list"></div>
                         </div>
                     </div>
                     <div class="project-footer">
@@ -210,18 +210,14 @@
                 <div class="project-card portfolio-item analytics">
                     <div>
                         <div class="project-img-box">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Analytics AI">
+                            <img  id="proyecto-2-img" alt="Proyecto Dos">
                             <div class="gradient-overlay"></div>
-                            <span class="cat-badge">Data Analytics</span>
+                            <span id="proyecto-2-cat-badge" class="cat-badge"></span>
                         </div>
                         <div class="project-body">
-                            <h3>Predictive Maintenance AI</h3>
-                            <p>Modelo de Machine Learning para prevención de fallas en maquinaria pesada con 94% de precisión.</p>
-                            <div class="tag-list">
-                                <span class="tag-item">TensorFlow</span>
-                                <span class="tag-item">FastAPI</span>
-                                <span class="tag-item">Docker</span>
-                            </div>
+                            <h3 id="proyecto-2-titulo"></h3>
+                            <p id="proyecto-2-descripcion"></p>
+                            <div id="proyecto-2-taglist" class="tag-list"></div>
                         </div>
                     </div>
                     <div class="project-footer">
@@ -235,18 +231,14 @@
                 <div class="project-card portfolio-item web">
                     <div>
                         <div class="project-img-box">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Industrial ERP">
+                            <img id="proyecto-3-img" alt="Proyecto 3">
                             <div class="gradient-overlay"></div>
-                            <span class="cat-badge">Software Empresarial</span>
+                            <span id="proyecto-3-cat-badge" class="cat-badge"></span>
                         </div>
                         <div class="project-body">
-                            <h3>Dashboard de Métricas OEE</h3>
-                            <p>Panel de control de Eficiencia General de Equipos (OEE) para supervisores de producción.</p>
-                            <div class="tag-list">
-                                <span class="tag-item">Vue.js</span>
-                                <span class="tag-item">Node.js</span>
-                                <span class="tag-item">PostgreSQL</span>
-                            </div>
+                            <h3 id="proyecto-3-titulo"></h3>
+                            <p id="proyecto-3-descripcion"></p>
+                            <div id="proyecto-3-taglist" class="tag-list"></div>
                         </div>
                     </div>
                     <div class="project-footer">
@@ -264,10 +256,16 @@
             
             <!-- Resumen -->
             <div class="glow-card">
-                <h2 style="font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 12px;">Perfil & Filosofía Work</h2>
-                <p style="font-size: 14px; color: var(--text-main); line-height: 1.6;">
-                    Ingeniero con más de 8 años de experiencia conectando el mundo físico industrial con arquitecturas digitales modernas. Apasionado por la optimización de procesos mediante análisis predictivo, desarrollo de plataformas escalables y digitalización integral de líneas de ensamble.
-                </p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                        <h2 style="font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 12px;">Perfil & Filosofía de Trabajo</h2>
+                    </div>
+                    <a id="perfil-cv" class="btn-qr" style="text-decoration: none; padding: 8px 14px;">
+                        <i data-lucide="download" style="width: 16px; height: 16px; color: var(--cyan-glow);"></i>
+                        <span>Descargar CV (PDF)</span>
+                    </a>
+                </div>
+                <p id="perfil-resume" style="font-size: 14px; color: var(--text-main); line-height: 1.6;"></p>
             </div>
 
             <!-- Experiencia Laboral Timeline -->
@@ -276,26 +274,93 @@
                 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-meta">
-                            <span>Core Analytics Inc.</span>
-                            <span>2021 - Presente</span>
+                        <h4 id="experiencias-1-titulo"></h4>
+                        <span class="timeline-dot muted"></span>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-1-com-1"></span>
+                            <span id="empleo-1-time-1"></span>
                         </div>
-                        <h4>Lead Solutions Architect</h4>
-                        <p>Liderazgo de equipo multidisciplinario enfocado en desplegar soluciones de visión artificial y analítica IoT para la industria manufacturera.</p>
+                        <div>
+                            <section class="timeline-meta muted sec-op">
+                                <ul id="experiencias-1-act"></ul>
+                            </section>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
+                        <h4 id="experiencias-2-titulo" ></h4>
                         <span class="timeline-dot muted"></span>
                         <div class="timeline-meta muted">
-                            <span>Industrial Automation Group</span>
-                            <span>2018 - 2021</span>
+                            <span id="empleo-2-com-1"></span>
+                            <span id="empleo-2-time-1"></span>
                         </div>
-                        <h4>Ingeniero de Automatización & IoT</h4>
-                        <p>Diseño de redes de comunicación industrial (PROFINET, Modbus TCP) e integración con plataformas en la nube AWS.</p>
+                        <div>
+                            <section class="timeline-meta muted sec-op">
+                                <ul id="experiencias-2-act"></ul>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4 id="experiencias-3-titulo"></h4>
+                        <span class="timeline-dot muted"></span>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-1"></span>
+                            <span id="empleo-3-time-1"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-2"></span>
+                            <span id="empleo-3-time-2"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-3"></span>
+                            <span id="empleo-3-time-3"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-4"></span>
+                            <span id="empleo-3-time-4"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-5"></span>
+                            <span id="empleo-3-time-5"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-6"></span>
+                            <span id="empleo-3-time-6"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-3-com-7"></span>
+                            <span id="empleo-3-time-7"></span>
+                        </div>
+                        <div>
+                            <section class="timeline-meta muted sec-op">
+                                <ul id="experiencias-3-act"></ul>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4 id="experiencias-4-titulo"></h4>
+                        <span class="timeline-dot muted"></span>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-4-com-1"></span>
+                            <span id="empleo-4-time-1"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-4-com-2"></span>
+                            <span id="empleo-4-time-2"></span>
+                        </div>
+                        <div class="timeline-meta muted">
+                            <span id="empleo-4-com-3"></span>
+                            <span id="empleo-4-time-3"></span>
+                        </div>
+                        <div>
+                            <section class="timeline-meta muted sec-op">
+                                <ul id="experiencias-4-act"></ul>
+                            </section>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <!-- Competencias Técnicas -->
             <div class="glow-card">
@@ -304,31 +369,31 @@
                 <div class="skill-list">
                     <div>
                         <div class="skill-header">
-                            <span>IoT & Industrial Protocols (MQTT, OPC UA, Modbus)</span>
-                            <span style="color: var(--cyan-glow);">95%</span>
+                            <span id="skill-header-1"></span>
+                            <span id="skill-header-1-porc" style="color: var(--cyan-glow);"></span>
                         </div>
                         <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" style="width: 95%;"></div>
+                            <div id="skill-header-1-style" class="skill-bar-fill""></div>
                         </div>
                     </div>
 
                     <div>
                         <div class="skill-header">
-                            <span>Data Analytics & Machine Learning (Python, SQL)</span>
-                            <span style="color: var(--cyan-glow);">88%</span>
+                            <span id="skill-header-2"></span>
+                            <span id="skill-header-2-porc" style="color: var(--cyan-glow);"></span>
                         </div>
                         <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" style="width: 88%;"></div>
+                            <div id="skill-header-2-style" class="skill-bar-fill"></div>
                         </div>
                     </div>
 
                     <div>
                         <div class="skill-header">
-                            <span>Desarrollo Web & Dashboarding (React, Node.js)</span>
-                            <span style="color: var(--cyan-glow);">82%</span>
+                            <span id="skill-header-3"></span>
+                            <span id="skill-header-3-porc" style="color: var(--cyan-glow);"></span>
                         </div>
                         <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" style="width: 82%;"></div>
+                            <div id="skill-header-3-style" class="skill-bar-fill"></div>
                         </div>
                     </div>
                 </div>
@@ -355,7 +420,7 @@
                     </div>
                     <div class="form-group">
                         <label>Asunto</label>
-                        <input type="text" required placeholder="Consulta sobre proyecto IoT">
+                        <input type="text" required placeholder="Consulta sobre proyecto">
                     </div>
                     <div class="form-group">
                         <label>Mensaje</label>
@@ -430,6 +495,8 @@
             <button onclick="closeProjectModal()" class="btn-details">Cerrar</button>
         </div>
     </div>
+
+    <!-- Lógica de Control JavaScript -->
     <script src="js/profile.js"></script>
     <script src="js/app.js"></script>
 </body>

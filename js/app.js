@@ -1,7 +1,96 @@
-// app.js
-
 // Inicialización de iconos SVG Lucide
 lucide.createIcons();
+
+document.getElementById("brand-name").innerHTML = profile.name;
+document.getElementById("profile-avatar").src = profile.avatar;
+document.getElementById("badge-role").innerHTML = profile.badgerole;
+document.getElementById("profile-avatar").alt = profile.user;
+document.getElementById("profile-name").innerHTML = profile.user;
+document.getElementById("profile-bio").innerHTML = profile.bio;
+document.getElementById("meta-badge-city").innerHTML = profile.city;
+document.getElementById("meta-badge-company").innerHTML = profile.company;
+document.getElementById("action-btn-tel").href = profile.tel;
+document.getElementById("action-btn-mailto").href = profile.mailto;
+document.getElementById("action-btn-ws").href = profile.ws;
+document.getElementById("action-btn-cv").href = profile.cv;
+document.getElementById("action-btn-cv").download = profile.download;
+document.getElementById("social-linkedin").href = profile.linkedin;
+document.getElementById("in-handle").innerHTML = profile.in_user;
+document.getElementById("social-github").href = profile.github;
+document.getElementById("gh-handle").innerHTML = profile.gh_user;
+document.getElementById("web-handle").innerHTML = profile.web;
+
+document.getElementById("mini-proj-c1-cat").innerHTML = profile.proyectos[0].catbadge;
+document.getElementById("mini-proj-c1-titulo").innerHTML = profile.proyectos[0].titulo;
+document.getElementById("mini-proj-c1-descripcion").innerHTML = profile.proyectos[0].descripcion;
+document.getElementById("perfil-cv").href = profile.cv;
+document.getElementById("perfil-cv").download = profile.download;
+document.getElementById("perfil-resume").innerHTML = profile.perfil_resume;
+document.getElementById("proyecto-1-img").src = profile.proyectos[0].imagen;
+document.getElementById("proyecto-1-cat-badge").innerHTML = profile.proyectos[0].catbadge;
+document.getElementById("proyecto-1-titulo").innerHTML = profile.proyectos[0].titulo;
+document.getElementById("proyecto-1-descripcion").innerHTML = profile.proyectos[0].descripcion;
+document.getElementById("proyecto-1-taglist").innerHTML = profile.proyectos[0].taglist;
+document.getElementById("skill-header-1").innerHTML = profile.proyectos[0].titulo + " " + profile.proyectos[0].list;
+document.getElementById("skill-header-1-porc").innerHTML = profile.proyectos[0].competencia_tec;
+document.getElementById("skill-header-1-style").style = profile.proyectos[0].skillbar;
+
+document.getElementById("mini-proj-c2-cat").innerHTML = profile.proyectos[1].catbadge;
+document.getElementById("mini-proj-c2-titulo").innerHTML = profile.proyectos[1].titulo;
+document.getElementById("mini-proj-c2-descripcion").innerHTML = profile.proyectos[1].descripcion;
+document.getElementById("proyecto-2-img").src = profile.proyectos[1].imagen;
+document.getElementById("proyecto-2-cat-badge").innerHTML = profile.proyectos[1].catbadge;
+document.getElementById("proyecto-2-titulo").innerHTML = profile.proyectos[1].titulo;
+document.getElementById("proyecto-2-descripcion").innerHTML = profile.proyectos[1].descripcion;
+document.getElementById("proyecto-2-taglist").innerHTML = profile.proyectos[1].taglist;
+document.getElementById("skill-header-2").innerHTML = profile.proyectos[1].titulo + " " + profile.proyectos[1].list;
+document.getElementById("skill-header-2-porc").innerHTML = profile.proyectos[1].competencia_tec;
+document.getElementById("skill-header-2-style").style = profile.proyectos[1].skillbar;
+
+document.getElementById("proyecto-3-img").src = profile.proyectos[2].imagen;
+document.getElementById("proyecto-3-cat-badge").innerHTML = profile.proyectos[2].catbadge;
+document.getElementById("proyecto-3-titulo").innerHTML = profile.proyectos[2].titulo;
+document.getElementById("proyecto-3-descripcion").innerHTML = profile.proyectos[2].descripcion;
+document.getElementById("proyecto-3-taglist").innerHTML = profile.proyectos[2].taglist;
+document.getElementById("skill-header-3").innerHTML = profile.proyectos[2].titulo + " " + profile.proyectos[2].list;
+document.getElementById("skill-header-3-porc").innerHTML = profile.proyectos[2].competencia_tec;
+document.getElementById("skill-header-3-style").style = profile.proyectos[2].skillbar;
+
+document.getElementById("experiencias-1-titulo").innerHTML = profile.experiencias[0].titulo;
+document.getElementById("empleo-1-com-1").innerHTML = profile.experiencias[0].empleos[0].empleo;
+document.getElementById("empleo-1-time-1").innerHTML = profile.experiencias[0].empleos[0].tiempo;
+document.getElementById("experiencias-1-act").innerHTML = "<li>"+profile.experiencias[0].act[0]+"</li><li>"+profile.experiencias[0].act[1]+"</li><li>"+profile.experiencias[0].act[2]+"</li><li>"+profile.experiencias[0].act[3]+"</li><li>"+profile.experiencias[0].act[4]+"</li>";
+
+document.getElementById("experiencias-2-titulo").innerHTML = profile.experiencias[1].titulo;
+document.getElementById("empleo-2-com-1").innerHTML = profile.experiencias[1].empleos[0].empleo;
+document.getElementById("empleo-2-time-1").innerHTML = profile.experiencias[1].empleos[0].tiempo;
+document.getElementById("experiencias-2-act").innerHTML = "<li>"+profile.experiencias[1].act[0]+"</li><li>"+profile.experiencias[1].act[1]+"</li><li>"+profile.experiencias[1].act[2]+"</li>";
+
+document.getElementById("experiencias-3-titulo").innerHTML = profile.experiencias[2].titulo;
+document.getElementById("empleo-3-com-1").innerHTML = profile.experiencias[2].empleos[0].empleo;
+document.getElementById("empleo-3-time-1").innerHTML = profile.experiencias[2].empleos[0].tiempo;
+document.getElementById("empleo-3-com-2").innerHTML = profile.experiencias[2].empleos[1].empleo;
+document.getElementById("empleo-3-time-2").innerHTML = profile.experiencias[2].empleos[1].tiempo;
+document.getElementById("empleo-3-com-3").innerHTML = profile.experiencias[2].empleos[2].empleo;
+document.getElementById("empleo-3-time-3").innerHTML = profile.experiencias[2].empleos[2].tiempo;
+document.getElementById("empleo-3-com-4").innerHTML = profile.experiencias[2].empleos[3].empleo;
+document.getElementById("empleo-3-time-4").innerHTML = profile.experiencias[2].empleos[3].tiempo;
+document.getElementById("empleo-3-com-5").innerHTML = profile.experiencias[2].empleos[4].empleo;
+document.getElementById("empleo-3-time-5").innerHTML = profile.experiencias[2].empleos[4].tiempo;
+document.getElementById("empleo-3-com-6").innerHTML = profile.experiencias[2].empleos[5].empleo;
+document.getElementById("empleo-3-time-6").innerHTML = profile.experiencias[2].empleos[5].tiempo;
+document.getElementById("empleo-3-com-7").innerHTML = profile.experiencias[2].empleos[6].empleo;
+document.getElementById("empleo-3-time-7").innerHTML = profile.experiencias[2].empleos[6].tiempo;
+document.getElementById("experiencias-3-act").innerHTML = "<li>"+profile.experiencias[2].act[0]+"</li><li>"+profile.experiencias[2].act[1]+"</li><li>"+profile.experiencias[2].act[2]+"</li><li>"+profile.experiencias[2].act[3]+"</li><li>"+profile.experiencias[2].act[4]+"</li>";
+
+document.getElementById("experiencias-4-titulo").innerHTML = profile.experiencias[3].titulo;
+document.getElementById("empleo-4-com-1").innerHTML = profile.experiencias[3].empleos[0].empleo;
+document.getElementById("empleo-4-time-1").innerHTML = profile.experiencias[3].empleos[0].tiempo;
+document.getElementById("empleo-4-com-2").innerHTML = profile.experiencias[3].empleos[1].empleo;
+document.getElementById("empleo-4-time-2").innerHTML = profile.experiencias[3].empleos[1].tiempo;
+document.getElementById("empleo-4-com-3").innerHTML = profile.experiencias[3].empleos[2].empleo;
+document.getElementById("empleo-4-time-3").innerHTML = profile.experiencias[3].empleos[2].tiempo;
+document.getElementById("experiencias-4-act").innerHTML = "<li>"+profile.experiencias[3].act[0]+"</li><li>"+profile.experiencias[3].act[1]+"</li><li>"+profile.experiencias[3].act[2]+"</li><li>"+profile.experiencias[3].act[3]+"</li>";
 
 // Cambio de Pestañas
 function switchTab(tabId) {
@@ -50,25 +139,25 @@ function toggleQRModal() {
 // Datos del Modal de Proyectos
 const projectData = {
     1: {
-        title: "Plataforma SCADA Telemetry Cloud",
-        cat: "IoT Industrial",
-        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600",
-        desc: "Arquitectura integral de comunicación en tiempo real para la recolección de datos de +500 sensores PLC Siemens S7-1200 distribuidos en plantas siderúrgicas. Permite supervisión remota y alertas preventivas.",
-        tags: ["Python", "MQTT", "React", "Docker", "TimescaleDB"]
+        title: profile.proyectos[0].titulo,
+        cat: profile.proyectos[0].catbadge,
+        img: profile.proyectos[0].imagen,
+        desc: profile.proyectos[0].detalles,
+        tags: profile.proyectos[0].tags
     },
     2: {
-        title: "Predictive Maintenance AI Engine",
-        cat: "Data Analytics",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
-        desc: "Desarrollo de modelos predictivos mediante redes neuronales convolucionales analizando datos de vibración y temperatura en turbinas pesadas, reduciendo paros no programados en un 35%.",
-        tags: ["TensorFlow", "FastAPI", "Python", "Grafana", "Kubernetes"]
+        title: profile.proyectos[1].titulo,
+        cat: profile.proyectos[1].catbadge,
+        img: profile.proyectos[1].imagen,
+        desc: profile.proyectos[1].detalles,
+        tags: profile.proyectos[1].tags
     },
     3: {
-        title: "Dashboard de Métricas OEE",
-        cat: "Software Empresarial",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
-        desc: "Interfaz moderna para monitorear la Eficiencia General de los Equipos (Disponibilidad, Rendimiento y Calidad) en tiempo real con reportes exportables a ejecutivos.",
-        tags: ["Vue.js", "Node.js", "PostgreSQL", "Vanilla CSS"]
+        title: profile.proyectos[2].titulo,
+        cat: profile.proyectos[2].catbadge,
+        img: profile.proyectos[2].imagen,
+        desc: profile.proyectos[2].detalles,
+        tags: profile.proyectos[2].tags
     }
 };
 
@@ -96,14 +185,14 @@ function closeProjectModal() {
 // Descarga de tarjeta VCard (.vcf)
 function downloadVCard() {
     const vcardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Fernando Solano
-TITLE:Industrial Solutions Specialist
-ORG:iaa.analytics Inc.
-TEL;TYPE=CELL:+524778487537
-EMAIL:desarrollocpaq2@gmail.com
-URL:https://iaa-analytics.mx
-END:VCARD`;
+    VERSION:3.0
+    FN:Fernando Solano
+    TITLE:Industrial Solutions Specialist
+    ORG:iaa.analytics Inc.
+    TEL;TYPE=CELL:+524778487537
+    EMAIL:desarrollocpaq2@gmail.com
+    URL:https://iaa-analytics.mx
+    END:VCARD`;
 
     const blob = new Blob([vcardData], { type: 'text/vcard' });
     const url = window.URL.createObjectURL(blob);
