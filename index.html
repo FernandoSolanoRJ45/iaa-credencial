@@ -49,7 +49,7 @@
                     <!-- Avatar con estatus -->
                     <div class="avatar-container">
                         <div class="avatar-img-box">
-                            <img id="profile-avatar">
+                            <img id="profile-avatar" alt="Fernando Solano">
                         </div>
                         <span class="online-status" title="Disponible para proyectos"></span>
                     </div>
@@ -149,17 +149,8 @@
                     </button>
                 </div>
 
-                <div class="grid-2">
-                    <div class="mini-project-card" onclick="openProjectModal(1)">
-                        <span id="mini-proj-c1-cat" class="cat"></span>
-                        <h4 id="mini-proj-c1-titulo"></h4>
-                        <p id="mini-proj-c1-descripcion"></p>
-                    </div>
-                    <div class="mini-project-card" onclick="openProjectModal(2)">
-                        <span id="mini-proj-c2-cat" class="cat"></span>
-                        <h4 id="mini-proj-c2-titulo"></h4>
-                        <p id="mini-proj-c2-descripcion"></p>
-                    </div>
+                <div class="grid-2" id="mini-projects-grid">
+                    <!-- Generado dinámicamente desde JavaScript -->
                 </div>
             </div>
 
@@ -176,79 +167,82 @@
                 <!-- Filtros -->
                 <div class="portfolio-filters">
                     <button onclick="filterPortfolio('all')" class="filter-btn active">Todos</button>
-                    <button onclick="filterPortfolio('macros')" class="filter-btn">Macros</button>
+                    <button onclick="filterPortfolio('iot')" class="filter-btn">IoT</button>
                     <button onclick="filterPortfolio('analytics')" class="filter-btn">Analytics</button>
                     <button onclick="filterPortfolio('web')" class="filter-btn">Software</button>
                 </div>
             </div>
 
-            <!-- Grilla de Proyectos -->
             <div class="portfolio-grid" id="portfolio-grid">
-                
-                <!-- Proyecto 1 -->
-                <div class="project-card portfolio-item macros">
-                    <div>
-                        <div class="project-img-box">
-                            <img id="proyecto-1-img" alt="Proyecto Uno">
-                            <div class="gradient-overlay"></div>
-                            <span id="proyecto-1-cat-badge" class="cat-badge"></span>
-                        </div>
-                        <div class="project-body">
-                            <h3 id="proyecto-1-titulo"></h3>
-                            <p id="proyecto-1-descripcion"></p>
-                            <div id="proyecto-1-taglist" class="tag-list"></div>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <button onclick="openProjectModal(1)" class="btn-details">
-                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card portfolio-item analytics">
-                    <div>
-                        <div class="project-img-box">
-                            <img  id="proyecto-2-img" alt="Proyecto Dos">
-                            <div class="gradient-overlay"></div>
-                            <span id="proyecto-2-cat-badge" class="cat-badge"></span>
-                        </div>
-                        <div class="project-body">
-                            <h3 id="proyecto-2-titulo"></h3>
-                            <p id="proyecto-2-descripcion"></p>
-                            <div id="proyecto-2-taglist" class="tag-list"></div>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <button onclick="openProjectModal(2)" class="btn-details">
-                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card portfolio-item web">
-                    <div>
-                        <div class="project-img-box">
-                            <img id="proyecto-3-img" alt="Proyecto 3">
-                            <div class="gradient-overlay"></div>
-                            <span id="proyecto-3-cat-badge" class="cat-badge"></span>
-                        </div>
-                        <div class="project-body">
-                            <h3 id="proyecto-3-titulo"></h3>
-                            <p id="proyecto-3-descripcion"></p>
-                            <div id="proyecto-3-taglist" class="tag-list"></div>
-                        </div>
-                    </div>
-                    <div class="project-footer">
-                        <button onclick="openProjectModal(3)" class="btn-details">
-                            Ver detalles <i data-lucide="eye" style="width: 14px; height: 14px; color: var(--cyan-glow);"></i>
-                        </button>
-                    </div>
-                </div>
-
+                <!-- Generado dinámicamente desde JavaScript -->
             </div>
+        </section>
+
+        <!-- ================= VISTA 3: TRAYECTORIA Y HABILIDADES ================= -->
+        <section id="tab-about" class="tab-content">
+            
+            <!-- Resumen -->
+            <div class="glow-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                        <h2 style="font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 12px;">Perfil & Filosofía de Trabajo</h2>
+                    </div>
+                    <a id="perfil-cv" class="btn-qr" style="text-decoration: none; padding: 8px 14px;">
+                        <i data-lucide="download" style="width: 16px; height: 16px; color: var(--cyan-glow);"></i>
+                        <span>Descargar CV (PDF)</span>
+                    </a>
+                </div>
+                <p id="perfil-resume" style="font-size: 14px; color: var(--text-main); line-height: 1.6;"></p>
+            </div>
+
+            <!-- Experiencia Laboral Timeline -->
+            <div class="glow-card">
+                <h3 class="section-title">Experiencia Profesional</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-grid" id="timeline-grid">
+                        <!-- Generado dinámicamente desde JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competencias Técnicas -->
+            <div class="glow-card">
+                <h3 class="section-title">Competencias Técnicas</h3>
+                
+                <div class="skill-list">
+                    <div>
+                        <div class="skill-header">
+                            <span>IoT & Industrial Protocols (MQTT, OPC UA, Modbus)</span>
+                            <span style="color: var(--cyan-glow);">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="skill-header">
+                            <span>Data Analytics & Machine Learning (Python, SQL)</span>
+                            <span style="color: var(--cyan-glow);">88%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="skill-header">
+                            <span>Desarrollo Web & Dashboarding (React, Node.js)</span>
+                            <span style="color: var(--cyan-glow);">82%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- ================= VISTA 3: TRAYECTORIA Y HABILIDADES ================= -->
@@ -493,6 +487,7 @@
             </div>
 
             <button onclick="closeProjectModal()" class="btn-details">Cerrar</button>
+            <a id="demo-link"></a>
         </div>
     </div>
 
